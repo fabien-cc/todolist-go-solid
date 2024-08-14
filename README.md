@@ -4,7 +4,7 @@
 pnpm i
 ```
 
-# Run DEV
+## Run DEV
 
 ```bash
 pnpm dev
