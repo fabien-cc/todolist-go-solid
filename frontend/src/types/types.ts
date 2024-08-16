@@ -7,7 +7,3 @@ export type Task = {
 export type TaskForm = {
   text: string;
 };
-
-export type TaskList = {
-  tasks: Task[];
-};

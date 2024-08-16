@@ -1,6 +1,10 @@
-import { TaskList } from "../../types/types";
+import { Task } from "../../types/types";
 
-const TaskListComponent = ({ tasks }: TaskList) => {
+interface Props {
+  tasks: Task[];
+}
+
+const TaskListComponent = ({ tasks }: Props) => {
   return (
     <ul>
       {tasks.map((task) => (
