@@ -4,6 +4,6 @@ export type Task = {
   done: boolean;
 };
 
-export type TaskForm = {
+export type TaskCreateDTO = {
   text: string;
 };
