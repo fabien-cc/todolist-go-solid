@@ -1,3 +1,4 @@
+import { For } from "solid-js";
 import { Task } from "../../types/tasks";
 
 interface Props {
@@ -6,13 +7,17 @@ interface Props {
 
 const TaskListComponent = ({ tasks }: Props) => {
   return (
-    <ul>
-      {tasks.map((task) => (
-        <li>
-          {task.text} {task.done ? "✅" : "❌"}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        <For each={tasks}>
+          {(task) => (
+            <li>
+              {task.text} {task.done ? "✅" : "❌"}
+            </li>
+          )}
+        </For>
+      </ul>
+    </div>
   );
 };
 
