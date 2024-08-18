@@ -27,6 +27,14 @@ export default function Home() {
           ref={input}
           placeholder="Task description"
           name="task"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              if (!input.value.trim()) return;
+              addTask({ text: input.value });
+              input.value = "";
+            }
+          }}
         />
         <button
           onclick={(e) => {
