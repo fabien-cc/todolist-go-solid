@@ -3,8 +3,8 @@ FROM golang:1.22.6-alpine
 # Set destination for COPY
 WORKDIR /app
 
-# Download Go modules
-COPY go.mod go.sum ./
+# Download Go modules go.sum 
+COPY go.mod ./
 RUN go mod download
 
 # Copy the source code. Note the slash at the end, as explained in
