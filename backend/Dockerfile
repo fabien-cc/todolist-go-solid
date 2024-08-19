@@ -3,6 +3,9 @@ FROM golang:1.22.6-alpine
 # Set destination for COPY
 WORKDIR /app
 
+# Install air for live reloading
+RUN go install github.com/air-verse/air@latest
+
 # Download Go modules
 COPY go.mod go.sum ./
 RUN go mod download
@@ -12,7 +15,7 @@ RUN go mod download
 COPY *.go ./
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
+#RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
 
 # Optional:
 # To bind to a TCP port, runtime parameters must be supplied to the docker command.
@@ -22,4 +25,4 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
 EXPOSE 8080
 
 # Run
-CMD ["/docker-gs-ping"]
+CMD ["air"]
